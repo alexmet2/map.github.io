@@ -1,24 +1,159 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-    <head>    
-        <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
-        <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"
-           type="text/javascript" charset="utf-8"></script>
-        <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
-           type="text/javascript" charset="utf-8"></script>
-        <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"
-           type="text/javascript" charset="utf-8"></script>
-        <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
-           type="text/javascript" charset="utf-8"></script>
-        <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"
-           type="text/javascript" charset="utf-8"></script>
-        <link rel="stylesheet" type="text/css"
-           href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
-        <link rel="stylesheet" type="text/css"
-           href="CSS/main.css" />
-    </head>
-    <body>
-    <div class="map" id="mapContainer"></div>    
-    <script src="Javascript/Javascript.js" type="text/javascript" charset="utf-8"></script>
-    </body>
+
+<head>
+	<title>Stellar by HTML5 UP</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/ImageCarousel.css">
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+		integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+	<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+	<link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+	<!-- Make sure you put this AFTER Leaflet's CSS -->
+	<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+		integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+	<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+	<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt">
+			<span class="logo"><img src="images/Logo.png" alt="" /></span>
+			<h1>Map</h1>
+			<p>Made By Metushi Alexandro</p>
+		</header>
+
+		<!-- Nav -->
+		<nav id="nav">
+			<ul>
+				<li><a href="#intro" class="active">Home</a></li>
+				<li><a href="#first">3 Best Places For Food</a></li>
+				<li><a href="#second">Historical Walk</a></li>
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- Introduction -->
+			<section id="intro" class="main">
+				<div class="spotlight">
+					<div class="content">
+						<div id="map"></div>
+					</div>
+				</div>
+			</section>
+
+			<!-- First Section -->
+			<section id="first" class="main special">
+				<header class="major">
+					<h2>3 Best Places For Food</h2>
+				</header>
+				<ul class="features">
+					<li>
+						<img src="images/Mikrolimano.jpg" class="ImgBest">
+						<h3>Μικρολίμανο</h3>
+						<p>Το Μικρολίμανο ή Φανάρι ή λιμένας Κουμουνδούρου, πρώην Τουρκολίμανο και
+							στην αρχαιότητα Λιμένας Μουνιχίας, αποτελεί σήμερα τουριστική τοποθεσία και περιλαμβάνεται
+							στην ευρύτερη συνοικία της Καστέλλας...</p>
+					</li>
+					<li>
+						<img src="images/Pasalimani.jpg" class="ImgBest">
+						<h3>Μαρίνα Ζέας</h3>
+						<p>Η Μαρίνα Ζέας βρίσκεται στον Πειραιά, στην ανατολική ακτή της χερσονήσου της Πειραϊκής. Η
+							περιοχή της θάλασσας αποτελείται από δύο λιμάνια, το Πασσαλιμάνι και τη Φρεατίδα.Σε σχέση με
+							άλλες μαρίνες, η κίνηση εδώ είναι πιο αυξημένη χάρη στα πολλά καταστήματα μέσα στη μαρίνα
+							και τον γύρω χώρο...</p>
+					</li>
+					<li>
+						<img src="images/Πeiraiki.jpg" class="ImgBest">
+						<h3>Πειραϊκή</h3>
+						<p>Η Πειραϊκή αποτελεί την Νοτιοδυτική παραλιακή συνοικία του Πειραιά, βρίσκεται ανατολικά του
+							κεντρικού λιμανιού του Πειραιά. Κατά μήκος της παραλίας της Πειραϊκής βρίσκονται τα
+							αρχαία Μακρά Τείχη (τείχη του Κόνωνα) και το λιμάνι της...</p>
+					</li>
+				</ul>
+				<footer class="major">
+					<ul class="actions special">
+						<li><a href="3BestPlaces.html" class="button">Learn More</a></li>
+					</ul>
+				</footer>
+			</section>
+
+			<!-- Second Section -->
+			<section id="second" class="main special">
+				<header class="major">
+					<h2>Historical Walk</h2>
+				</header>
+				<div class="wrap">
+					<div id="arrow-left" class="arrow"></div>
+					<div id="slider">
+						<div class="slide slide1">
+							<div class="slide-content">
+								<span>Τρούμπα</span>
+							</div>
+						</div>
+						<div class="slide slide2">
+							<div class="slide-content">
+								<span>Αρχαιολογικό Μουσείο του Πειραιά</span>
+							</div>
+						</div>
+						<div class="slide slide3">
+							<div class="slide-content">
+								<span>Τείχη Πειραιά</span>
+							</div>
+						</div>
+						<div class="slide slide4">
+							<div class="slide-content">
+								<span>Δημοτικό Θέατρο</span>
+							</div>
+						</div>
+					</div>
+					<div id="arrow-right" class="arrow"></div>
+				</div>
+				<footer class="major">
+					<ul class="actions special">
+						<li><a href="HistoricalWalk.html" class="button">Learn More</a></li>
+					</ul>
+				</footer>
+			</section>
+
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<p class="copyright">&copy; Created By Metushi Alexandro. ΙΕΚ ΑΚΜΗ ΠΕΙΡΑΙΑ.</p>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/Map.js"></script>
+	<script src="assets/js/ImageCarousel.js"></script>
+
+</body>
+
 </html>
